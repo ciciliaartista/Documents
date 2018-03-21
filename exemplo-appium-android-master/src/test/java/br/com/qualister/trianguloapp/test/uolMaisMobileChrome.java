@@ -38,7 +38,7 @@ public class uolMaisMobileChrome {
 		
 		//acessando a pagina do video
 		
-		driver.get("http://mais.uol.com.br/view/8bak1uywu0n2/avenida-norte-ganha-nova-circulacao-a-partir-deste-sabado-0402CC993168C0A16326?types=A&");
+		//driver.get("http://mais.uol.com.br/view/8bak1uywu0n2/avenida-norte-ganha-nova-circulacao-a-partir-deste-sabado-0402CC993168C0A16326?types=A&");
 		
 		// validando o resultado apresentado
 		

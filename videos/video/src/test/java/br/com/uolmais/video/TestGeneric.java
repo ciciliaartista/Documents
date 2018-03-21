@@ -87,8 +87,8 @@ public abstract class TestGeneric {
 	public void testStorage() {
 		Arrays.asList("720p", "540p", "360p", "270p").forEach(qualidade -> {
 			
-			driver.get
-			("https://entretenimento.uol.com.br/noticias/redacao/2018/02/07/como-foi-feita-a-cena-mais-importante-de-missao-impossivel-efeito-fallout.htm");
+//			driver.get
+//			("http://videos.band.uol.com.br/");
 			
 			//driver.get
 			//("https://noticias.bol.uol.com.br/ultimas-noticias/internacional/2018/02/16/ladrao-nocauteia-comparsa-com-pedrada-em-tentativa-atrapalhada-de-furto-na-china.htm");
@@ -112,6 +112,11 @@ public abstract class TestGeneric {
 
 			mudarQualidadeVideo(qualidade);
 		});
+	}
+	
+	private void videosRelacionados(String relacionados) {
+		WebElement elem = driver.findElement(By.cssSelector(".quality-type"));
+		Assert.assertEquals(relacionados, elem.getAttribute("innerText"));
 	}
 
 	private void mudarQualidadeVideo(String qualidade) {
@@ -142,7 +147,7 @@ public abstract class TestGeneric {
 		Assert.assertEquals(qualidade, elem.getAttribute("innerText"));
 	}
 
-	private void wait(int time) {
+	public static void wait(int time) {
 		try {
 			Thread.sleep(time);
 		} catch (InterruptedException e) {

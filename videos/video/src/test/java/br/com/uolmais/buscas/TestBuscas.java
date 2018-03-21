@@ -40,12 +40,15 @@ public abstract class TestBuscas {
 	public static Document doc = null;
 	public static Image image = null;
 	String nomeBrownse;
-	int i = 1;
+	static int i;
 
 	@Before
 	public void setUp() throws IOException {
 		
 		driver = createDriver();
+		
+		// Maximize a janela
+		driver.manage().window().maximize();
 		
 		CriaPDF.captureScreenShot(driver, doc, image);
 		CriaPDF.gravaImagensPdf(doc, image);
@@ -66,7 +69,7 @@ public abstract class TestBuscas {
 				
 		System.out.println("Gerando evidências");
 		
-		dir2 = new File("C:/Users/vrt_coliveira/Desktop/Uol_Mais_QA/Changes/Evidencias/Auto_Play/IE/Auto_Play");
+		dir2 = new File("C:/Users/vrt_coliveira/Desktop/Uol_Mais_QA/Changes/Evidencias/Front_21_03");
 		dir2.mkdir();
 		
 		Document doc = CriaPDF.CriaPDFs(dir2);
@@ -92,19 +95,13 @@ public abstract class TestBuscas {
 	}
 	
 	public abstract WebDriver createDriver();
+	
+	
 
 	@Test
-	public void testStorage() {
-		
+	public static void testStorage() {
 	
-		// Maximize a janela
-		driver.manage().window().maximize();
-		
-		//Arrays.asList("720p", "540p", "360p", "270p").forEach(qualidade -> {
-			
-			
-		
-			while (i<=10) {
+			while (i<=5) {
 			
 			//Entra no site do uolmais
 			driver.get("http://mais.uol.com.br/");
@@ -164,14 +161,10 @@ public abstract class TestBuscas {
 			
 			i++;
 
-//			verificarSeVideoEstahExecutando();
-//
-//			mudarQualidadeVideo(qualidade);
 		}
 			
 			System.out.println("Teste executado "+i);
 	}
-
 	
 	private void mudarQualidadeVideo(String qualidade) {
 		
@@ -201,7 +194,7 @@ public abstract class TestBuscas {
 		Assert.assertEquals(qualidade, elem.getAttribute("innerText"));
 	}
 
-	private void wait(int time) {
+	private static void wait(int time) {
 		try {
 			Thread.sleep(time);
 		} catch (InterruptedException e) {
