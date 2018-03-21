@@ -86,7 +86,7 @@ public class BrowserStack_Android_5{
     // Acesso vídeo normal
     
     driver.get
-	("https://noticias.uol.com.br/cotidiano/ultimas-noticias/2018/03/21/dos-14-aos-93-anos-mulheres-querem-manter-vivo-legado-de-marielle.htm");
+	("https://noticias.uol.com.br/cotidiano/ultimas-noticias/2018/03/21/dos-14-aos-93-anos-mulheres-querem-manter-vivo-legado-de-marielle.htm?autoplayMobile=true");
 	
     System.out.println(driver.getTitle());
     driver.quit();

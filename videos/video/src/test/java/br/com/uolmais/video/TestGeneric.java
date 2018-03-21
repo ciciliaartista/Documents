@@ -39,6 +39,9 @@ public abstract class TestGeneric {
 		
 		driver = createDriver();
 		
+		// Maximize a janela
+		driver.manage().window().maximize();
+		
 		CriaPDF.captureScreenShot(driver, doc, image);
 		CriaPDF.gravaImagensPdf(doc, image);
 		
@@ -85,14 +88,15 @@ public abstract class TestGeneric {
 
 	@Test
 	public void testStorage() {
+		
 		Arrays.asList("720p", "540p", "360p", "270p").forEach(qualidade -> {
 			
-//			driver.get
-//			("http://videos.band.uol.com.br/");
+			driver.get
+			("http://mais.uol.com.br/view/d8c139bvd63t/paes-falha-e-trellez-abre-o-placar-para-o-sao-paulo-04024D183168C4A16326?types=A&");
 			
-			//driver.get
-			//("https://noticias.bol.uol.com.br/ultimas-noticias/internacional/2018/02/16/ladrao-nocauteia-comparsa-com-pedrada-em-tentativa-atrapalhada-de-furto-na-china.htm");
+			wait(27000);
 			
+			videosRelacionados();
 			
 			try {
 				CriaPDF.captureScreenShot(driver, doc, image);
@@ -111,12 +115,18 @@ public abstract class TestGeneric {
 			verificarSeVideoEstahExecutando();
 
 			mudarQualidadeVideo(qualidade);
+			
+			
 		});
 	}
 	
-	private void videosRelacionados(String relacionados) {
-		WebElement elem = driver.findElement(By.cssSelector(".quality-type"));
-		Assert.assertEquals(relacionados, elem.getAttribute("innerText"));
+	private void videosRelacionados() {
+		
+		//Seleciona os vídeos mais recentes
+		WebElement elem = driver.findElement(By.xpath("//*[@id=\"UOLPlayer_15216653201762519\"]/div/div/div[3]/div[1]/div[1]"));
+		System.out.println("Videos relacionados");
+		elem.click();
+		
 	}
 
 	private void mudarQualidadeVideo(String qualidade) {
