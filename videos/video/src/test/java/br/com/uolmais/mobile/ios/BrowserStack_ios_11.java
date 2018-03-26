@@ -7,16 +7,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import br.com.uolmais.buscas.TestBuscaDevices;
 import br.com.uolmais.buscas.TestBuscas;
 import br.com.uolmais.video.TestGeneric;
 
 import java.net.URL;
+import java.util.List;
 
 public class BrowserStack_ios_11 extends TestGeneric{
 
   public static final String USERNAME = "uolmais1"; 
-  public static final String AUTOMATE_KEY = "E1cc19WKtji89sbxvVAG";
+  public static final String AUTOMATE_KEY = "81LodMsUgMp3YcqURgyJ";
   public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
   static int i = 1;
 
@@ -65,6 +65,17 @@ public class BrowserStack_ios_11 extends TestGeneric{
 //		System.out.println("Tag "+valorTagBusca.getText());
 //				
 //		System.out.println("Selecionou a primeira tag" +i);
+//    
+//    
+//    	//Seleciona o mediaID
+//	
+//  		List<WebElement> elements = driver.findElements(By.cssSelector(".uolplayer"));
+//  		
+//          for (WebElement el : elements) {
+//
+//          	System.out.println("MediaId "+el.getAttribute("mediaid") + " ID: " + el.getAttribute("id"));
+//
+//          }
 //		
 //		//Preenche o campo de busca
 //		WebElement valorBusca = driver.findElement(By.name("q"));
@@ -82,7 +93,7 @@ public class BrowserStack_ios_11 extends TestGeneric{
 //		i++;
 //		
 //    }
-	
+//	
     driver.get
    	("https://noticias.uol.com.br/cotidiano/ultimas-noticias/2018/03/21/dos-14-aos-93-anos-mulheres-querem-manter-vivo-legado-de-marielle.htm");
     

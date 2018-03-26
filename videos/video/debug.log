@@ -1,0 +1,1 @@
+[0322/094624.762:ERROR:process_info.cc(396)] NtQuerySystemInformation SystemExtendedHandleInformation: The specified information record length does not match the length required for the specified information class. (0xc0000004)

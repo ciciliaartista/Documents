@@ -40,7 +40,9 @@ public abstract class TestGeneric {
 		driver = createDriver();
 		
 		// Maximize a janela
-		driver.manage().window().maximize();
+//		driver.manage().window().maximize();
+//		
+//		wait(10000);
 		
 		CriaPDF.captureScreenShot(driver, doc, image);
 		CriaPDF.gravaImagensPdf(doc, image);
@@ -61,7 +63,7 @@ public abstract class TestGeneric {
 				
 		System.out.println("Gerando evidências");
 		
-		File dir2 = new File("C:/Users/vrt_coliveira/Desktop/Uol_Mais_QA/Changes/Evidencias/Change_task_video3");
+		File dir2 = new File("C:/Users/vrt_coliveira/Desktop/Uol_Mais_QA/Changes/Evidencias/Autoplay");
 		dir2.mkdir();
 		
 		Document doc = CriaPDF.CriaPDFs(dir2);
@@ -92,12 +94,8 @@ public abstract class TestGeneric {
 		Arrays.asList("720p", "540p", "360p", "270p").forEach(qualidade -> {
 			
 			driver.get
-			("http://mais.uol.com.br/view/d8c139bvd63t/paes-falha-e-trellez-abre-o-placar-para-o-sao-paulo-04024D183168C4A16326?types=A&");
-			
-			wait(27000);
-			
-			videosRelacionados();
-			
+			("https://noticias.uol.com.br/cotidiano/ultimas-noticias/2018/03/21/dos-14-aos-93-anos-mulheres-querem-manter-vivo-legado-de-marielle.htm"); 
+
 			try {
 				CriaPDF.captureScreenShot(driver, doc, image);
 				CriaPDF.gravaImagensPdf(doc, image);

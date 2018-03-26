@@ -40,7 +40,7 @@ public abstract class TestBuscas {
 	public static Document doc = null;
 	public static Image image = null;
 	String nomeBrownse;
-	static int i;
+	static int i = 1;
 
 	@Before
 	public void setUp() throws IOException {
@@ -96,10 +96,8 @@ public abstract class TestBuscas {
 	
 	public abstract WebDriver createDriver();
 	
-	
-
 	@Test
-	public static void testStorage() {
+	public void testStorage() {
 	
 			while (i<=5) {
 			
@@ -107,16 +105,18 @@ public abstract class TestBuscas {
 			driver.get("http://mais.uol.com.br/");
 			
 			//Seleciona os vídeos mais recentes
-			WebElement elem = driver.findElement(By.xpath("//*[@id=\"mais-recentes\"]/div/div/div/a/h2/strong"));
+			//WebElement elem = driver.findElement(By.xpath("//*[@id=\"mais-recentes\"]/div/div/div/a/h2/strong"));
+			WebElement elem = driver.findElement(By.id("mais-recentes"));
+			
 			elem.click();
 					
 			//Seleciona o primeiro vídeo da fila
 			
 			//Chrome
-			//WebElement video1 = driver.findElement(By.xpath("//*[@id=\"zeitgeists\"]/li"+"["+i+"]"));
+			WebElement video1 = driver.findElement(By.xpath("//*[@id=\"zeitgeists\"]/li"+"["+i+"]"));
 			
-			//IE
-			WebElement video1 = driver.findElement(By.cssSelector("#zeitgeists>li:nth-child(1)"));		
+//			//IE
+//			WebElement video1 = driver.findElement(By.cssSelector("#zeitgeists>li:nth-child(1)"));		
 			
 			video1.click();	
 			
@@ -126,6 +126,16 @@ public abstract class TestBuscas {
 			//Seleciona a primeira tag
 			WebElement valorTagBusca = driver.findElement(By.className("tgw"));
 			System.out.println("Tag "+valorTagBusca.getText());
+			
+			//Seleciona o mediaID
+		
+			List<WebElement> elements = driver.findElements(By.cssSelector(".uolplayer"));
+			
+            for (WebElement el : elements) {
+
+                   System.out.println("MediaId "+el.getAttribute("mediaid") + " ID: " + el.getAttribute("id"));
+
+            }
 			
 			wait(5000);
 			System.out.println("Selecionou a primeira tag" +i);
@@ -141,8 +151,8 @@ public abstract class TestBuscas {
 			WebElement buttonBuscar = driver.findElement(By.cssSelector("input[type='submit'"));
 			buttonBuscar.click();
 			
-			wait(5000);
-			System.out.println("Buscou" +i);
+//			wait(5000);
+//			System.out.println("Buscou" +i);
 			
 			
 			try {
