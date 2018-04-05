@@ -94,7 +94,7 @@ public abstract class TestGeneric {
 		Arrays.asList("720p", "540p", "360p", "270p").forEach(qualidade -> {
 			
 			driver.get
-			("https://noticias.uol.com.br/cotidiano/ultimas-noticias/2018/03/21/dos-14-aos-93-anos-mulheres-querem-manter-vivo-legado-de-marielle.htm"); 
+			("http://mais.uol.com.br/view/78oudicj60ka/brasil-vence-o-canada-e-conquista-a-copa-caixa-04029B3370E0910366?types=A&"); 
 
 			try {
 				CriaPDF.captureScreenShot(driver, doc, image);
@@ -113,6 +113,8 @@ public abstract class TestGeneric {
 			verificarSeVideoEstahExecutando();
 
 			mudarQualidadeVideo(qualidade);
+			
+			System.out.println("Mudou qualidade");
 			
 			
 		});

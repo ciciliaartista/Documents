@@ -99,14 +99,14 @@ public abstract class TestBuscas {
 	@Test
 	public void testStorage() {
 	
-			while (i<=5) {
+			while (i<=7) {
 			
 			//Entra no site do uolmais
 			driver.get("http://mais.uol.com.br/");
 			
 			//Seleciona os vídeos mais recentes
-			//WebElement elem = driver.findElement(By.xpath("//*[@id=\"mais-recentes\"]/div/div/div/a/h2/strong"));
-			WebElement elem = driver.findElement(By.id("mais-recentes"));
+			WebElement elem = driver.findElement(By.xpath("//*[@id=\"mais-recentes\"]/div/div/div/a/h2/strong"));
+			//WebElement elem = driver.findElement(By.id("mais-recentes"));
 			
 			elem.click();
 					
