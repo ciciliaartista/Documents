@@ -1,14 +1,16 @@
-package br.com.uolmais.videosRelacionados;
+package br.com.uolmais.generic;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-public class metodosGenericos {
+public abstract class metodosGenericos {
+	
 	
 	public static WebDriver driver;
-
 	
+	public abstract WebDriver createDriver();
+
 	
 	protected static void clickWithMousePosition(WebElement elem) {
 		

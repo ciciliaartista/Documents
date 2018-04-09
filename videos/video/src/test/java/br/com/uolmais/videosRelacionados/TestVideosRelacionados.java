@@ -29,7 +29,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Image;
 import br.com.evidencias.CriaPDF;
-import br.com.main.Principal;
+import br.com.uolmais.generic.metodosGenericos;
 import br.com.uolmais.videosRelacionados.VideosRelacionados;
 
 
@@ -38,7 +38,7 @@ import br.com.uolmais.videosRelacionados.VideosRelacionados;
  */
 public abstract class TestVideosRelacionados extends metodosGenericos{
 
-	public static WebDriver driver;
+	//public static WebDriver driver;
 	public static File dir2;
 	public static Document doc = null;
 	public static Image image = null;
@@ -99,32 +99,13 @@ public abstract class TestVideosRelacionados extends metodosGenericos{
 		System.exit(0);
 	}
 	
-	public abstract WebDriver createDriver();
 	
 	@Test
-	public void testStorage() {
-		
-			//Entra no site do uolmais
+	public void testRelacionados() {
 		
 			driver.get("http://mais.uol.com.br/view/91f2iyogwchf/honestidade-04029A3170E0910366?types=A&");
-	
-			while (i<=10) {
-			
-				//Seleciona o mediaID	
-			
-				List<WebElement> elements = driver.findElements(By.cssSelector(".uolplayer"));
-			
-				for (WebElement el : elements) {
-
-					System.out.println("MediaId "+el.getAttribute("mediaid") + " ID: " + el.getAttribute("id"));
-                  
-        			VideosRelacionadosID = el.getAttribute("id");
-        			clickWithMousePosition(el);
-        			//wait(5000);
-        			VideosRelacionados.videosRelacionadosMetodo();
- 
-				}
-			
+			VideosRelacionados relacionados = new VideosRelacionados();
+			relacionados.videosRelacionadosMetodo();
 			wait(5000);
 			
 				
@@ -141,44 +122,7 @@ public abstract class TestVideosRelacionados extends metodosGenericos{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-			i++;
-
-		}
-			
+		
 	}
 	
-//	private static void videosRelacionados() {
-//
-//		System.out.println("Testando videos relacionados "+VideosRelacionadosID);
-//		
-//		WebElement elem = driver.findElement(By.className("up-bt-related"));
-//		elem.click();
-//		
-//		WebElement relacionadoFila = driver.findElement(By.cssSelector(".up-ul>li:nth-child("+i+")"));
-//        clickWithMousePosition(relacionadoFila);
-//				
-//		wait(2000);
-//		
-//	}
-//	
-//	private static void wait(int time) {
-//		try {
-//			Thread.sleep(time);
-//		} catch (InterruptedException e) {
-//			e.printStackTrace();
-//		}
-//	}
-//
-//	// Usando eventos do mouse pelo selenium
-//	private static void clickWithMousePosition(WebElement elem) {
-//		
-//		System.out.println("Entrou no método do Mouse Position" );
-//		
-//		int width = elem.getSize().getWidth();
-//
-//		Actions act = new Actions(driver);
-//		act.moveToElement(elem).moveByOffset((width / 2) - 2, 0).click().perform();
-//	}
-
 }

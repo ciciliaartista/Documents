@@ -3,23 +3,21 @@ package br.com.uolmais.videosRelacionados;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class VideosRelacionados extends metodosGenericos{
+public class VideosRelacionados extends TestVideosRelacionados{
 	
 	static int i = 2;
 	static String VideosRelacionadosID;
-	
-	
-	protected static void videosRelacionadosMetodo() {
 		
-
-		driver.get("http://mais.uol.com.br/view/91f2iyogwchf/honestidade-04029A3170E0910366?types=A&");
-
-		while (i<=10) {
+	public void videosRelacionadosMetodo() {
+		
+		System.out.println("Entrou no método vídeos relacionados");
+		
+	while (i<=2) {
 		
 			//Seleciona o mediaID	
-		
 			List<WebElement> elements = driver.findElements(By.cssSelector(".uolplayer"));
 		
 			for (WebElement el : elements) {
@@ -28,10 +26,8 @@ public class VideosRelacionados extends metodosGenericos{
               
     			VideosRelacionadosID = el.getAttribute("id");
     			clickWithMousePosition(el);
-    			//wait(5000);
-    			
-
-			}
+    			wait(5000);
+ 			}
 		
 				wait(5000);
 
@@ -42,13 +38,20 @@ public class VideosRelacionados extends metodosGenericos{
 		
 				WebElement relacionadoFila = driver.findElement(By.cssSelector(".up-ul>li:nth-child("+i+")"));
 				clickWithMousePosition(relacionadoFila);
-				
+			
+				i++;
 		
 		}
-	
+		
 	
 	}
-	
+
+
+	@Override
+	public WebDriver createDriver() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 
 }
