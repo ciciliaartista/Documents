@@ -3,7 +3,8 @@ package br.com.uolmais.video;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class TestChrome extends TestGeneric {
+
+public class TestChrome extends TestPlayVideoUnico {
 
 	@Override
 	public WebDriver createDriver() {

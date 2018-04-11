@@ -6,7 +6,9 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class TestEDGE extends TestGeneric {
+import br.com.uolmais.generic.TestGeneric;
+
+public class TestEDGE extends TestPlayVideoUnico {
 
 	@Override
 	public WebDriver createDriver() {

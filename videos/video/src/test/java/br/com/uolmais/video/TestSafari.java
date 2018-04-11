@@ -9,6 +9,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 
 import br.com.uolmais.buscas.TestBuscas;
+import br.com.uolmais.generic.TestGeneric;
 
 import java.net.URL;
 

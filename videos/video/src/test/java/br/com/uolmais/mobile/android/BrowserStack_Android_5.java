@@ -7,14 +7,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-
+import br.com.uolmais.buscas.BuscaVideos;
 import br.com.uolmais.buscas.TestBuscas;
+import br.com.uolmais.generic.metodosGenericos;
 import br.com.uolmais.videosRelacionados.TestVideosRelacionados;
 
 import java.net.URL;
 import java.util.List;
 
-public class BrowserStack_Android_5 {
+public class BrowserStack_Android_5 extends metodosGenericos{
 
   public static final String USERNAME = "uolmais1"; 
   public static final String AUTOMATE_KEY = "81LodMsUgMp3YcqURgyJ";
@@ -42,12 +43,17 @@ public class BrowserStack_Android_5 {
   
 	//Entra no site do uolmais
 
-	driver.get("http://mais.uol.com.br/view/91f2iyogwchf/limites-04021B3170E0910366?types=A&");
-
-	
-    System.out.println(driver.getTitle());
+    driver.get("http://mais.uol.com.br/view/91f2iyogwchf/honestidade-04029A3170E0910366?types=A&");
+	wait(5000);
+   System.out.println(driver.getTitle());
     driver.quit();
 
   }
+
+@Override
+public WebDriver createDriver() {
+	// TODO Auto-generated method stub
+	return null;
+}
 
 }

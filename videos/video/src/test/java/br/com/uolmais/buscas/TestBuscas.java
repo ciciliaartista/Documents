@@ -37,7 +37,6 @@ import br.com.uolmais.videosRelacionados.VideosRelacionados;
  */
 public abstract class TestBuscas extends metodosGenericos {
 
-	public static WebDriver driver;
 	public static File dir2;
 	public static Document doc = null;
 	public static Image image = null;
@@ -52,16 +51,16 @@ public abstract class TestBuscas extends metodosGenericos {
 		// Maximize a janela
 		driver.manage().window().maximize();
 		
-		CriaPDF.captureScreenShot(driver, doc, image);
-		CriaPDF.gravaImagensPdf(doc, image);
-		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		
-		CriaPDF.captureScreenShot(driver, null, null);
-		
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		
-		CriaPDF.captureScreenShot(driver, null, null);
+//		CriaPDF.captureScreenShot(driver, doc, image);
+//		CriaPDF.gravaImagensPdf(doc, image);
+//		
+//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//		
+//		CriaPDF.captureScreenShot(driver, null, null);
+//		
+//		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+//		
+//		CriaPDF.captureScreenShot(driver, null, null);
 	}
 	
 	@After
@@ -71,7 +70,7 @@ public abstract class TestBuscas extends metodosGenericos {
 				
 		System.out.println("Gerando evidências");
 		
-		dir2 = new File("C:/Users/vrt_coliveira/Desktop/Uol_Mais_QA/Changes/Evidencias/Front_21_03");
+		dir2 = new File("C:/Users/vrt_coliveira/Desktop/Uol_Mais_QA/Changes/Evidencias/Buscas/Busca");
 		dir2.mkdir();
 		
 		Document doc = CriaPDF.CriaPDFs(dir2);
@@ -97,10 +96,10 @@ public abstract class TestBuscas extends metodosGenericos {
 	@Test
 	public void testBusca() {
 		
-			driver.get("http://mais.uol.com.br/view/91f2iyogwchf/honestidade-04029A3170E0910366?types=A&");
+			driver.get("http://mais.uol.com.br/");
 			BuscaVideos busca = new BuscaVideos();
 			busca.BuscaVideosMetodo();
-			wait(5000);
+			wait(15000);
 		
 			try {
 				CriaPDF.captureScreenShot(driver, doc, image);

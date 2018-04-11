@@ -10,7 +10,7 @@ public class BuscaVideos extends TestBuscas {
 	
 	public void BuscaVideosMetodo() {
 	
-		while (i<=7) {
+		while (i<=2) {
 		
 			//Entra no site do uolmais
 			driver.get("http://mais.uol.com.br/");

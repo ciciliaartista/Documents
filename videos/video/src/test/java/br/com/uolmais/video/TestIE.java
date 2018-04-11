@@ -5,7 +5,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class TestIE extends TestGeneric {
+import br.com.uolmais.generic.TestGeneric;
+
+public class TestIE extends TestPlayVideoUnico {
 
 	private DesiredCapabilities dc;
 	@Override

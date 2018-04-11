@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import br.com.main.Principal;
-import br.com.uolmais.video.TestGeneric;
+import br.com.uolmais.generic.TestGeneric;
 
 public class Test_evidencia extends TestGeneric {
 	

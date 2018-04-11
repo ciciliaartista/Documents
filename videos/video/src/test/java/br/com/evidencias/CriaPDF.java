@@ -38,13 +38,14 @@ import org.openqa.selenium.TakesScreenshot;
 import org.apache.commons.io.FileUtils;
 
 import br.com.uolmais.buscas.TestBuscas;
+import br.com.uolmais.generic.metodosGenericos;
 import br.com.uolmais.video.*;
 
 
 
 
 
-public class CriaPDF extends TestBuscas{
+public class CriaPDF extends metodosGenericos{
 	
 	//Instanciando a data corrente
 	private static Date dataCorrente = new Date();
@@ -94,7 +95,7 @@ public class CriaPDF extends TestBuscas{
 		PdfPCell lblVersao = new PdfPCell (new Paragraph("Versão", alteraFonte));
 		PdfPCell txtVersao = new PdfPCell (new Paragraph("V1"));
 		PdfPCell lblCT = new PdfPCell (new Paragraph("CT", alteraFonte));
-		PdfPCell txtCT = new PdfPCell (new Paragraph("Change Busca"));
+		PdfPCell txtCT = new PdfPCell (new Paragraph("Vídeo webm"));
 		PdfPCell lblBrownse = new PdfPCell (new Paragraph("Brownse", alteraFonte));
 		PdfPCell txtBrownse = new PdfPCell (new Paragraph(""+driver.toString(), alteraFonte));
 		PdfPCell lblExecutor = new PdfPCell (new Paragraph("Executor", alteraFonte));

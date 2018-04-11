@@ -1,4 +1,4 @@
-package br.com.uolmais.video;
+package br.com.uolmais.generic;
 
 import java.awt.AWTException;
 import java.awt.Robot;

@@ -15,7 +15,10 @@ public class VideosRelacionados extends TestVideosRelacionados{
 		
 		System.out.println("Entrou no método vídeos relacionados");
 		
-	while (i<=2) {
+	while (i<=10) {
+		
+		
+			
 		
 			//Seleciona o mediaID	
 			List<WebElement> elements = driver.findElements(By.cssSelector(".uolplayer"));
@@ -42,6 +45,8 @@ public class VideosRelacionados extends TestVideosRelacionados{
 				i++;
 		
 		}
+	
+	System.out.println("Teste executados " +i+ "vezes");
 		
 	
 	}
