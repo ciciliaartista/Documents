@@ -33,10 +33,11 @@ public class BrowserStack_swap_dispositivo extends metodosGenericos{
     
     System.out.println("Denifiu as capacidades "+caps); 
 
-    caps.setCapability("browserName", "android");
-    caps.setCapability("device", "Motorola Moto X 2nd Gen");
-    caps.setCapability("realMobile", "true");
-    caps.setCapability("os_version", "5.0");
+    caps.setCapability("browser", "Safari");
+    caps.setCapability("browser_version", "13.0");
+    caps.setCapability("os", "OS X");
+    caps.setCapability("os_version", "High Sierra");
+    caps.setCapability("resolution", "1024x768");
   
     
     System.out.println("Denifiu o dispositivo "+caps.getBrowserName()); 
@@ -46,7 +47,7 @@ public class BrowserStack_swap_dispositivo extends metodosGenericos{
     //Entra no site do uolmais
 
     driver.get
-	("http://mais.uol.com.br/view/dsirb7h509tj/homem-fica-ferido-apos-confusao-em-frente-ao-instituto-lula-0402CD1A3764C8A16326?types=A&webm=true");
+	("http://mais.uol.com.br/view/bfc3becnpbdr/deborah-secco-diz-quando-se-sente-mais-sexy-e-fala-de-erros-fashion-04020C98306CC4A16326?types=A&");
 	
 	wait(15000);
 	

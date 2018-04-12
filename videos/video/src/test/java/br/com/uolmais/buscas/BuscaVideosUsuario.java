@@ -6,11 +6,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class BuscaVideos extends TestBuscas {
+public class BuscaVideosUsuario extends TestBuscasUsuario {
 	
-	public void BuscaVideosMetodo() {
+	public void BuscaVideosUsuarioMetodo() {
 	
-		while (i<=7) {
+		while (i<=6) {
 		
 			//Entra no site do uolmais
 			driver.get("http://mais.uol.com.br/");
@@ -34,9 +34,9 @@ public class BuscaVideos extends TestBuscas {
 			wait(5000);
 			System.out.println("Selecionou o primeiro da fila" +i);
 			
-			//Seleciona a primeira tag
-			WebElement valorTagBusca = driver.findElement(By.className("tgw"));
-			System.out.println("Tag "+valorTagBusca.getText());
+			//Seleciona a primeiro usuário
+			WebElement valorUsuarioBusca = driver.findElement(By.className("title"));
+			System.out.println("Usuario "+valorUsuarioBusca.getText());
 			
 			//Seleciona o mediaID
 		
@@ -49,11 +49,11 @@ public class BuscaVideos extends TestBuscas {
 	        }
 			
 			wait(5000);
-			System.out.println("Selecionou a primeira tag" +i);
+			System.out.println("Selecionou o usuário " +i);
 			
 			//Preenche o campo de busca
 			WebElement valorBusca = driver.findElement(By.name("q"));
-			valorBusca.sendKeys(" "+valorTagBusca.getText());
+			valorBusca.sendKeys(" "+valorUsuarioBusca.getText());
 			
 			wait(5000);
 			System.out.println("Preencheu a busca" +i);

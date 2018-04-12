@@ -1,7 +1,6 @@
 package br.com.uolmais.generic;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -12,37 +11,29 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 
-public abstract class metodosGenericos {
+public class Uol {
 	
-	public static WebDriver driver;
-	public abstract WebDriver createDriver();
 	private static final int TIMEOUT = 30;
+	
 	private static final List<Class<? extends Throwable>> IGNORE_EXCEPTION_LIST_DEFAULT = Arrays.asList(NoAlertPresentException.class, NoSuchElementException.class, UnhandledAlertException.class);
 
-
-	
-	protected static void clickWithMousePosition(WebElement elem) {
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		
-		System.out.println("Entrou no método do Mouse Position" );
+		WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().pageLoadTimeout(TIMEOUT, TimeUnit.SECONDS);
+		driver.manage().timeouts().setScriptTimeout(TIMEOUT, TimeUnit.SECONDS);
 		
-		int width = elem.getSize().getWidth();
-
-		Actions act = new Actions(driver);
-		act.moveToElement(elem).moveByOffset((width / 2) - 2, 0).click().perform();
-	}
-	
-	protected static void skipPublicidade() {
-		
-		System.out.println("Entrou no método de publicidade" );
-//		WebElement ad = driver.findElement(By.cssSelector(".ad-container iframe"));
-//		driver.switchTo().frame(ad);
-//		driver.findElement(By.cssSelector(".videoAdUiSkipButton")).click();
-//		driver.switchTo().defaultContent();
+		driver.get("http://mais.uol.com.br/view/65k9fo807g7i/trump-ameaca-russia-e-anuncia-novo-ataque-a-misseis-a-siria-kremlin-rebate-04024C9B336AC8A16326?types=A&");
+		//driver.get("http://mais.uol.com.br/view/xawq16eu920g/meirelles-se-filia-ao-mdb-04024D193262C8A16326?types=A&");
 		
 		WebElement ad = null;
 		try {
@@ -64,15 +55,7 @@ public abstract class metodosGenericos {
 			}
 		}
 		
-		
-	}
-	
-	protected static void wait(int time) {
-		try {
-			Thread.sleep(time);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		//driver.quit();
 	}
 	
 	private static WebElement waitForClickOf(WebDriver driver, By locator) {
@@ -89,6 +72,4 @@ public abstract class metodosGenericos {
 		return getDefaultFluentWait(driver).until(ExpectedConditions.presenceOfElementLocated(locator));
 	}
 	
-
-
 }

@@ -95,7 +95,7 @@ public class CriaPDF extends metodosGenericos{
 		PdfPCell lblVersao = new PdfPCell (new Paragraph("Versão", alteraFonte));
 		PdfPCell txtVersao = new PdfPCell (new Paragraph("V1"));
 		PdfPCell lblCT = new PdfPCell (new Paragraph("CT", alteraFonte));
-		PdfPCell txtCT = new PdfPCell (new Paragraph("Vídeo webm"));
+		PdfPCell txtCT = new PdfPCell (new Paragraph("Validações perfil de usuário - Eliminação Tico, Tico"));
 		PdfPCell lblBrownse = new PdfPCell (new Paragraph("Brownse", alteraFonte));
 		PdfPCell txtBrownse = new PdfPCell (new Paragraph(""+driver.toString(), alteraFonte));
 		PdfPCell lblExecutor = new PdfPCell (new Paragraph("Executor", alteraFonte));

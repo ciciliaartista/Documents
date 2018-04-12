@@ -5,7 +5,7 @@ import java.io.File;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class TestChrome extends TestBuscas {
+public class TestChrome extends TestBuscasUsuario {
 
 	
 	@Override

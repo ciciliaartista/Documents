@@ -96,7 +96,6 @@ public abstract class TestBuscas extends metodosGenericos {
 	@Test
 	public void testBusca() {
 		
-			driver.get("http://mais.uol.com.br/");
 			BuscaVideos busca = new BuscaVideos();
 			busca.BuscaVideosMetodo();
 			wait(15000);

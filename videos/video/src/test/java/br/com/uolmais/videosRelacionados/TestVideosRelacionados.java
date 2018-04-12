@@ -53,27 +53,30 @@ public abstract class TestVideosRelacionados extends metodosGenericos{
 		
 		// Maximize a janela
 		driver.manage().window().maximize();
-		
-		CriaPDF.captureScreenShot(driver, doc, image);
-		CriaPDF.gravaImagensPdf(doc, image);
-		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		
-		CriaPDF.captureScreenShot(driver, null, null);
-		
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		
-		CriaPDF.captureScreenShot(driver, null, null);
+//		
+//		CriaPDF.captureScreenShot(driver, doc, image);
+//		CriaPDF.gravaImagensPdf(doc, image);
+//		
+//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//		
+//		CriaPDF.captureScreenShot(driver, null, null);
+//		
+//		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+//		
+//		CriaPDF.captureScreenShot(driver, null, null);
 	}
 	
 	@After
 	public void tearDown() throws Throwable {
 		
-		//System.out.println("Teste executado com o brownse "+driver);
+		System.out.println("Teste executado com o brownse "+driver);
+		
+		CriaPDF.captureScreenShot(driver, doc, image);
+		CriaPDF.gravaImagensPdf(doc, image);
 				
 		System.out.println("Gerando evidências");
 		
-		dir2 = new File("C:/Users/vrt_coliveira/Desktop/Uol_Mais_QA/Changes/Evidencias/Videos_Relacionados");
+		dir2 = new File("C:/Users/vrt_coliveira/Desktop/Uol_Mais_QA/Changes/Evidencias/Videos_Relacionados/Videos_Relacionados");
 		dir2.mkdir();
 		
 		Document doc = CriaPDF.CriaPDFs(dir2);
@@ -102,9 +105,9 @@ public abstract class TestVideosRelacionados extends metodosGenericos{
 	@Test
 	public void testRelacionados() {
 		
-			driver.get("http://mais.uol.com.br/view/dsirb7h509tj/homem-fica-ferido-apos-confusao-em-frente-ao-instituto-lula-0402CD1A3764C8A16326?types=A&webm=true");
+			driver.get("http://mais.uol.com.br/view/65k9fo807g7i/trump-ameaca-russia-e-anuncia-novo-ataque-a-misseis-a-siria-kremlin-rebate-04024C9B336AC8A16326?types=A&");
 			
-			wait(15000);
+			//wait(15000);
 			
 			skipPublicidade();
 			

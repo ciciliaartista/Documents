@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 
 public class VideosRelacionados extends TestVideosRelacionados{
 	
-	static int i = 2;
+	static int i=1;
 	static String VideosRelacionadosID;
 		
 	public void videosRelacionadosMetodo() {
@@ -16,9 +16,6 @@ public class VideosRelacionados extends TestVideosRelacionados{
 		System.out.println("Entrou no método vídeos relacionados");
 		
 	while (i<=10) {
-		
-		
-			
 		
 			//Seleciona o mediaID	
 			List<WebElement> elements = driver.findElements(By.cssSelector(".uolplayer"));
@@ -32,8 +29,6 @@ public class VideosRelacionados extends TestVideosRelacionados{
     			wait(5000);
  			}
 		
-				wait(5000);
-
 				System.out.println("Testando videos relacionados "+VideosRelacionadosID);
 		
 				WebElement elem = driver.findElement(By.className("up-bt-related"));
@@ -41,6 +36,7 @@ public class VideosRelacionados extends TestVideosRelacionados{
 		
 				WebElement relacionadoFila = driver.findElement(By.cssSelector(".up-ul>li:nth-child("+i+")"));
 				clickWithMousePosition(relacionadoFila);
+				skipPublicidade();
 			
 				i++;
 		
