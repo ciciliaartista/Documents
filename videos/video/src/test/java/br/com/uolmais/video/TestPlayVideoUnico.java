@@ -15,6 +15,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,6 +27,7 @@ import br.com.evidencias.CriaPDF;
 import br.com.main.Principal;
 import br.com.uolmais.generic.metodosGenericos;
 
+
 /**
  * Unit test for simple App.
  */
@@ -34,6 +36,7 @@ public abstract class TestPlayVideoUnico extends metodosGenericos{
 	public static File dir2;
 	public static Document doc = null;
 	public static Image image = null;
+	static String videoUnico;
 
 	@Before
 	public void setUp() throws IOException {
@@ -90,13 +93,31 @@ public abstract class TestPlayVideoUnico extends metodosGenericos{
 		
 			
 			driver.get
-			("http://mais.uol.com.br/view/dsirb7h509tj/homem-fica-ferido-apos-confusao-em-frente-ao-instituto-lula-0402CD1A3764C8A16326?types=A&webm=true");
+			("https://www1.folha.uol.com.br/poder/2018/04/sem-teto-invadem-triplex-em-guaruja-em-protesto-contra-prisao-de-lula.shtml");
 			
-			wait(15000);
+			WebElement elemPlayer = driver.findElement(By.cssSelector(".c-video__mask"));
 			
-			skipPublicidade();
+			Actions actions = new Actions(driver);
+			// Page Down para chegar no vídeo.
+			actions.sendKeys(Keys.PAGE_DOWN).perform();
+			actions.moveToElement(elemPlayer).click().perform();
+			clickWithMousePosition(elemPlayer);
 			
-			wait(15000);
+			//Click em qualquer parte do vídeo para iniciar a reprodução
+			elemPlayer = driver.findElement(By.className("uolplayer._video.is-desktop.video._mouseover"));
+			clickWithMousePosition(elemPlayer);
+			
+			//Seleciona o mediaID	
+			List<WebElement> elements = driver.findElements(By.cssSelector(".uolplayer"));
+					
+			for (WebElement el : elements) {
+
+				System.out.println("MediaId "+el.getAttribute("mediaid") + " ID: " + el.getAttribute("id"));
+              
+				videoUnico = el.getAttribute("id");
+    			clickWithMousePosition(el);
+    			wait(5000);
+ 			}
 			
 
 			try {

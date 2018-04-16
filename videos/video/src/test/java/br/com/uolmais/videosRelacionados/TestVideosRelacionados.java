@@ -105,12 +105,8 @@ public abstract class TestVideosRelacionados extends metodosGenericos{
 	@Test
 	public void testRelacionados() {
 		
-			driver.get("http://mais.uol.com.br/view/65k9fo807g7i/trump-ameaca-russia-e-anuncia-novo-ataque-a-misseis-a-siria-kremlin-rebate-04024C9B336AC8A16326?types=A&");
-			
-			//wait(15000);
-			
+			driver.get("http://mais.uol.com.br/view/91f2iyogwchf/orquestra-e-acao-no-parque-do-coco--ce-04029C3670E0910366?types=A&");
 			skipPublicidade();
-			
 			VideosRelacionados relacionados = new VideosRelacionados();
 			relacionados.videosRelacionadosMetodo();
 			wait(5000);

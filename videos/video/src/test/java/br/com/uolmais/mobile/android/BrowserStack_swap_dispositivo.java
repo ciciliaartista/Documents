@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-
+import br.com.uolmais.buscas.BuscaVideosUsuario;
 import br.com.uolmais.buscas.TestBuscas;
 import br.com.uolmais.generic.metodosGenericos;
 import br.com.uolmais.video.TestPlayVideoUnico;
@@ -34,7 +34,7 @@ public class BrowserStack_swap_dispositivo extends metodosGenericos{
     System.out.println("Denifiu as capacidades "+caps); 
 
     caps.setCapability("browser", "Safari");
-    caps.setCapability("browser_version", "13.0");
+    caps.setCapability("browser_version", "11.0");
     caps.setCapability("os", "OS X");
     caps.setCapability("os_version", "High Sierra");
     caps.setCapability("resolution", "1024x768");
@@ -44,17 +44,17 @@ public class BrowserStack_swap_dispositivo extends metodosGenericos{
      
     driver = new RemoteWebDriver(new URL(URL), caps);
   
-    //Entra no site do uolmais
+    // Maximize a janela
+ 	driver.manage().window().maximize();
 
-    driver.get
-	("http://mais.uol.com.br/view/bfc3becnpbdr/deborah-secco-diz-quando-se-sente-mais-sexy-e-fala-de-erros-fashion-04020C98306CC4A16326?types=A&");
+	driver.get
+	("http://mais.uol.com.br/view/hpdkuafs82cu/megatubarao--trailer-1-legendado-04020E18346AC8A16326?types=A&");
 	
 	wait(15000);
 	
 	skipPublicidade();
 	
 	wait(15000);
-	
 	
 	System.out.println(driver.getTitle());
     driver.quit();

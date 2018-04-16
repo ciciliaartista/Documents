@@ -1,22 +1,20 @@
 package br.com.uolmais.video;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Platform;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-
-
-import br.com.uolmais.buscas.TestBuscas;
-import br.com.uolmais.generic.TestGeneric;
+import br.com.uolmais.generic.*;
 
 import java.net.URL;
 
-public class TestSafari extends TestGeneric{
+public class TestSafari extends metodosGenericos{
 
   public static final String USERNAME = "uolmais1"; 
-  public static final String AUTOMATE_KEY = "E1cc19WKtji89sbxvVAG";
+  public static final String AUTOMATE_KEY = "81LodMsUgMp3YcqURgyJ";
   public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
   static int i = 1;
 
@@ -85,15 +83,20 @@ public class TestSafari extends TestGeneric{
 //		
 //    }
 //    
+    driver.manage().window().maximize();
     // Acesso vídeo normal
     
-    driver.get
-	("https://videos.bol.uol.com.br/video/conexao-animal-modelos-descobrem-curiosidades-sobre-aves-0402CD1C3564C4A16326");
-    
- // Maximize a janela
-    driver.manage().window().maximize();
-    
-    wait(50000);
+	driver.get
+	("https://www1.folha.uol.com.br/poder/2018/04/sem-teto-invadem-triplex-em-guaruja-em-protesto-contra-prisao-de-lula.shtml");
+	
+	WebElement elemPlayer = driver.findElement(By.cssSelector(".c-video__mask"));
+	
+	Actions actions = new Actions(driver);
+	
+	// Page Down para chegar no vídeo.
+	actions.sendKeys(Keys.PAGE_DOWN).perform();
+	actions.moveToElement(elemPlayer).click().perform();
+	clickWithMousePosition(elemPlayer);
 	
     System.out.println(driver.getTitle());
     driver.quit();
